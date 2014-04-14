@@ -13,6 +13,8 @@ using MainContext;
 using DevExpress.XtraEditors;
 using DevExpress.XtraRichEdit;
 using System.IO;
+using DevExpress.XtraSplashScreen;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CodeBank
 {
@@ -150,6 +152,8 @@ namespace CodeBank
 
         private void barButtonItem_Ara_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //Yeni Arama fonksiyonu
+
             if (barEditItem_AranacakMetin.EditValue == null || barEditItem_AranacakMetin.EditValue.ToString().Trim().Length == 0)
             {
                 return;
@@ -193,13 +197,78 @@ namespace CodeBank
             {
                 listBoxControl_Kodlar.DataSource = null;
             }
+            else if (ribbonControl1.SelectedPage.Name=="ribbonPage_Yonetim")
+            {
+                Ozellikler ozellik = ctx.Ozelliklers.Where(o => o.Ozellik == "SonYedekleme").Select(o => o).Single();
+                barStaticItem_sonYedeklemeZamani.Caption = ozellik.Deger;
+
+            }
         }
 
         private void listBoxControl_Kodlar_DataSourceChanged(object sender, EventArgs e)
         {
-            if (listBoxControl_Kodlar.DataSource==null)
+            if (listBoxControl_Kodlar.DataSource == null)
             {
                 richEditControl_Kod.Text = "";
+            }
+        }
+
+        private void barButtonItem_yedekle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Yeni Yedek al
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Code Bank Files|*.sfr";
+            if (DialogResult.OK == save.ShowDialog())
+            {
+                SplashScreenManager.ShowForm(typeof(WaitFormYukleniyor));
+
+                DateTime simdi = DateTime.Now;
+                Ozellikler ozellik = ozellik = ctx.Ozelliklers.Where(o => o.Ozellik == "SonYedekleme").Select(o => o).Single();
+                ozellik.Deger = simdi.ToString("dd MMMM yyyy HH:mm:ss");
+                ctx.SubmitChanges();
+                File.Copy("db.db", save.FileName, true);
+
+                SplashScreenManager.CloseForm();
+
+                ozellik = ctx.Ozelliklers.Where(o => o.Ozellik == "SonYedekleme").Select(o => o).Single();
+                barStaticItem_sonYedeklemeZamani.Caption = ozellik.Deger;
+                XtraMessageBox.Show("Yedekleme işlemi başarı ile gerçekleşmiştir.", "Bilgi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void barButtonItem_yedegiYukle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Yeni Yedekten yükleme
+            //Gelistir Yedekten yüklemeden sonra veri kaybını önle
+
+            OpenFileDialog open = new OpenFileDialog();
+            if (DialogResult.OK==open.ShowDialog())
+            {
+                SQLiteConnectionStringBuilder str= new SQLiteConnectionStringBuilder();
+                str.DataSource=open.FileName;
+                MainDataContext ctx2 = new MainDataContext(str.ToString());
+                string yedeklemeTarihi = ctx.Ozelliklers.Where(o => o.ID == 1).Select(o => o.Deger).Single();
+                StringBuilder builder = new StringBuilder();
+                builder.AppendFormat("Seçtiğiniz yedekleme dosyası {0} tarihinde alınmıştır.\nDevam etmeniz durumunda veritanınız bu yedek dosyası ile eşitlenecektir.\nBu tarihten sonraki kodlarınız silinecektir. Devam etmek istiyor musunuz?", yedeklemeTarihi);
+
+                DialogResult result = XtraMessageBox.Show(builder.ToString(), "Uyarı!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result==DialogResult.Yes)
+                {
+                    SplashScreenManager.ShowForm(typeof(WaitFormYukleniyor));
+
+                    File.Copy(open.FileName, "db.db", true);
+
+                    Ozellikler ozellik = ctx.Ozelliklers.Where(o => o.ID == 2).Select(o => o).Single();
+                    ozellik.Deger = DateTime.Now.ToString("dd MMMM yyyy HH:mm:ss");
+                    ctx.SubmitChanges();
+
+                    SplashScreenManager.CloseForm();
+
+                    XtraMessageBox.Show("Yedekten geri yükleme işlemi başarı ile gerçekleşmiştir.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ozellik = ctx.Ozelliklers.Where(o => o.ID == 1).Select(o => o).Single();
+                    barStaticItem_sonYedeklemeZamani.Caption = ozellik.Deger;
+                }
             }
         }
 

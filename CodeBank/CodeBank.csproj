@@ -98,6 +98,9 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>C:\Program Files (x86)\System.Data.SQLite\2013\bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -109,10 +112,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AramaIslemleri.cs" />
-    <Compile Include="DataBase.Designer.cs">
+    <Compile Include="DataBaseModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataBase.lqml</DependentUpon>
+      <DependentUpon>DataBaseModel.lqml</DependentUpon>
     </Compile>
     <Compile Include="Form_Ana.cs">
       <SubType>Form</SubType>
@@ -128,6 +131,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaitFormYukleniyor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitFormYukleniyor.Designer.cs">
+      <DependentUpon>WaitFormYukleniyor.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraForm_YeniKodEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,18 +159,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WaitFormYukleniyor.resx">
+      <DependentUpon>WaitFormYukleniyor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraForm_YeniKodEkle.resx">
       <DependentUpon>XtraForm_YeniKodEkle.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataBase.Diagram1.view">
-      <DependentUpon>DataBase.lqml</DependentUpon>
+    <None Include="DataBaseModel.Diagram1.view">
+      <DependentUpon>DataBaseModel.lqml</DependentUpon>
     </None>
-    <None Include="DataBase.edps">
-      <DependentUpon>DataBase.lqml</DependentUpon>
+    <None Include="DataBaseModel.edps">
+      <DependentUpon>DataBaseModel.lqml</DependentUpon>
     </None>
-    <None Include="DataBase.lqml">
+    <None Include="DataBaseModel.lqml">
       <Generator>DevartLinqToSqlGenerator</Generator>
-      <LastGenOutput>DataBase.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataBaseModel.Designer.cs</LastGenOutput>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -195,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modify.ico" />
+    <Content Include="OzelliklerDosyasi.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

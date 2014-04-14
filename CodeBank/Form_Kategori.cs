@@ -131,6 +131,7 @@ namespace CodeBank
                 ctx.SubmitChanges();
                 KategorileriGetir();
                 textEdit_guncellenecek.EditValue = null;
+                kategori = null;
             }
         }
 
@@ -159,6 +160,7 @@ namespace CodeBank
                 ctx.AltKategoris.InsertOnSubmit(Altkategori);
                 ctx.SubmitChanges();
                 textEdit_AltKategoriAdi.EditValue = null;
+                Altkategori = null;
             }
             catch (Exception ex)
             {
@@ -212,7 +214,7 @@ namespace CodeBank
                 XtraMessageBox.Show("Silinecek alt kategoriyi seçmediniz.", "Dikkat!", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
-            DialogResult result = XtraMessageBox.Show(Altkategori.Ad + " silinecek. Bu kategori altındaki bütün alt kategori ve kodlar da silinecek. Onaylıyor musunuz?", "Uyarı!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = XtraMessageBox.Show(Altkategori.Ad + " silinecek. Bu kategori altındaki bütün kodlar da silinecek. Onaylıyor musunuz?", "Uyarı!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 ctx.Kodlars.DeleteAllOnSubmit

@@ -1,0 +1,4 @@
+﻿Ozellikle Index:
+
+1 - Son Yedek Alma
+2 - Son Yedekten Yükleme

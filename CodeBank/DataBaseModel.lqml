@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="main" EntityNamespace="MainContext" ContextNamespace="MainContext" Class="MainDataContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="26f2029a-8344-4d2f-91b8-f1fca33404cf" Provider="Devart.Data.SQLite.Linq.Provider.SQLiteDataProvider, Devart.Data.SQLite.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=&quot;D:\SAFER YAZILIM\Software Projects\CodeBank\CodeBank\bin\Debug\db.db&quot;" Provider="Devart.Data.SQLite" />
+  <Table Name="&quot;main&quot;.Kategoriler" Member="Kategorilers">
+    <Type Name="Kategoriler" ed:Guid="53760af0-740d-460c-802e-ab8d968e7a97">
+      <Column Name="ID" Type="System.Int32" DbType="INTEGER NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="True" ed:Guid="048dfc94-4540-4fba-9cec-91d29e279942" />
+      <Column Name="Ad" Type="System.String" DbType="NCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" FixedLength="true" MaxLength="30" ed:ValidateMaxLength="30" ed:ValidateRequired="True" ed:Guid="579ec0d9-480d-419b-b325-f6fe2d4d2f33" />
+      <Association Name="Kategoriler_AltKategori" ed:AssociationGuid="7238c544-8a2e-4686-9ef1-281f39b2d193" Member="AltKategoris" ed:Guid="e3fc0cdf-562f-4607-a367-924e59a0c52a" ThisKey="ID" OtherKey="Kategori" Type="AltKategori" />
+      <Association Name="Kategoriler_Kodlar" ed:AssociationGuid="7839e253-d896-48c0-b346-b7ededee1227" Member="Kodlars" ed:Guid="247de752-76a1-4788-a57f-4ed87ea61a96" ThisKey="ID" OtherKey="Kategori" Type="Kodlar" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.AltKategori" Member="AltKategoris">
+    <Type Name="AltKategori" ed:Guid="34e017fe-b86e-4674-a2ae-4e9af07b0476">
+      <Column Name="ID" Type="System.Int32" DbType="INTEGER NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="True" ed:Guid="33b7e625-b0de-4810-abb1-ff028846c569" />
+      <Column Name="Kategori" Type="System.Int32" DbType="INTEGER NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="True" ed:Guid="3a9002f3-ea8b-46f0-8475-56541d375e4b" />
+      <Column Name="Ad" Type="System.String" DbType="NCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" FixedLength="true" MaxLength="30" ed:ValidateMaxLength="30" ed:ValidateRequired="True" ed:Guid="412650b5-e9f8-44b4-b3ea-7022fe017e9e" />
+      <Association Name="Kategoriler_AltKategori" ed:AssociationGuid="7238c544-8a2e-4686-9ef1-281f39b2d193" Member="Kategoriler" ed:Guid="15b1a99d-860d-43b7-ad6f-de1ef831f8c4" ThisKey="Kategori" OtherKey="ID" Type="Kategoriler" DeleteRule="CASCADE" IsForeignKey="true" />
+      <Association Name="AltKategori_Kodlar" ed:AssociationGuid="c5bf62a7-6931-4fd7-acaf-be743d822fde" Member="Kodlars" ed:Guid="e44b6d2d-a105-4ad1-96b5-67af162e680a" ThisKey="ID" OtherKey="AltKategori" Type="Kodlar" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.Kodlar" Member="Kodlars">
+    <Type Name="Kodlar" ed:Guid="18a4f851-ad19-448f-9913-f5ad32eab79b">
+      <Column Name="ID" Type="System.Int32" DbType="INTEGER NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="True" ed:Guid="2f888cbe-2e57-4260-bda3-80396cc6570d" />
+      <Column Name="Kategori" Type="System.Int32" DbType="INTEGER NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="True" ed:Guid="3bf5f35c-c2ec-419d-9a07-14600d4b1a69" />
+      <Column Name="AltKategori" Type="System.Int32" DbType="INTEGER NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="True" ed:Guid="92e61246-c2c7-48ac-8f9a-066bec372544" />
+      <Column Name="Baslik" Type="System.String" DbType="NCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" FixedLength="true" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="True" ed:Guid="0b1258fa-4833-407e-b124-d21930030b70" />
+      <Column Name="Kod" Type="System.String" DbType="NCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" FixedLength="true" MaxLength="2000" ed:ValidateMaxLength="2000" ed:ValidateRequired="True" ed:Guid="48f0066d-a14d-48f9-9e4a-456f15d55ee4" />
+      <Association Name="Kategoriler_Kodlar" ed:AssociationGuid="7839e253-d896-48c0-b346-b7ededee1227" Member="Kategoriler" ed:Guid="9da90c96-b678-4b94-9d94-d4bff7a2538e" ThisKey="Kategori" OtherKey="ID" Type="Kategoriler" DeleteRule="CASCADE" IsForeignKey="true" />
+      <Association Name="AltKategori_Kodlar" ed:AssociationGuid="c5bf62a7-6931-4fd7-acaf-be743d822fde" Member="AltKategori1" ed:Guid="4507485b-8049-4e9c-a286-b82cce9f10b1" ThisKey="AltKategori" OtherKey="ID" Type="AltKategori" DeleteRule="CASCADE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="&quot;main&quot;.Ozellikler" Member="Ozelliklers">
+    <Type Name="Ozellikler" ed:Guid="7228c66c-be4f-4a7d-b25f-aa0a5f0ea924">
+      <Column Name="ID" Type="System.Int32" DbType="INTEGER NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="True" ed:Guid="37897218-2d5c-4572-b11a-60fbe509aeed" />
+      <Column Name="Ozellik" Type="System.String" DbType="NVARCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="True" ed:Guid="200d3354-8ed8-4ae2-a637-96b061ff2687" />
+      <Column Name="Deger" Type="System.String" DbType="NVARCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="True" ed:Guid="f9b9f6a9-463a-47ec-bb60-bf7915f62554" />
+    </Type>
+  </Table>
+</Database>

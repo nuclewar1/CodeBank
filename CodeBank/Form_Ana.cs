@@ -27,20 +27,20 @@ namespace CodeBank
         Kodlar Kod;
         private void Form1_Load(object sender, EventArgs e)
         {
+            VeriTabaniKontroluYap();
             SQLiteConnectionStringBuilder builder = new SQLiteConnectionStringBuilder();
             builder.DataSource = Application.StartupPath + "\\db.db";
             ctx = new MainDataContext(builder.ToString());
-            VeriTabaniKontroluYap();
             KategorileriCek();
+            listBoxControl_Kodlar.DataSource = ctx.Kodlars.Select(k => k);
         }
 
         private void VeriTabaniKontroluYap()
         {
-            if (!ctx.DatabaseExists())
+            if (!File.Exists("db.db"))
             {
-                File.Open(ctx.Connection.DataSource, FileMode.CreateNew);
-                ctx.CreateDatabase();
-                File.SetAttributes(ctx.Connection.DataSource, FileAttributes.Hidden); 
+                MessageBox.Show("Test");
+                File.Copy("cdb.db", "db.db");
             }
         }
 

@@ -40,6 +40,9 @@
             this.barButtonItem_kategoriGuncelle = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_KoduSil = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_koduGuncelle = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem_yazdir = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_farkliKaydet = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage_KayitliKodlar = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup_Islemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -49,14 +52,11 @@
             this.repositoryItemBorderLineStyle1 = new DevExpress.XtraRichEdit.Forms.Design.RepositoryItemBorderLineStyle();
             this.repositoryItemBorderLineWeight1 = new DevExpress.XtraRichEdit.Forms.Design.RepositoryItemBorderLineWeight();
             this.repositoryItemFloatingObjectOutlineWeight1 = new DevExpress.XtraRichEdit.Forms.Design.RepositoryItemFloatingObjectOutlineWeight();
+            this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.listBoxControl_Kodlar = new DevExpress.XtraEditors.ListBoxControl();
             this.richEditControl_Kod = new DevExpress.XtraRichEdit.RichEditControl();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.barButtonItem_yazdir = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem_farkliKaydet = new DevExpress.XtraBars.BarButtonItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_Kategori)).BeginInit();
@@ -66,10 +66,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBorderLineStyle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBorderLineWeight1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFloatingObjectOutlineWeight1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Kodlar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -127,6 +127,7 @@
             this.repositoryItemLookUpEdit_Kategori.DisplayMember = "Ad";
             this.repositoryItemLookUpEdit_Kategori.Name = "repositoryItemLookUpEdit_Kategori";
             this.repositoryItemLookUpEdit_Kategori.NullText = "Kategori Seçin";
+            this.repositoryItemLookUpEdit_Kategori.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemLookUpEdit_Kategori.ValueMember = "ID";
             // 
             // barEditItem_AltKategori
@@ -148,6 +149,7 @@
             this.repositoryItemLookUpEdit_AltKategori.DisplayMember = "Isim";
             this.repositoryItemLookUpEdit_AltKategori.Name = "repositoryItemLookUpEdit_AltKategori";
             this.repositoryItemLookUpEdit_AltKategori.NullText = "Alt Kategori Seçin";
+            this.repositoryItemLookUpEdit_AltKategori.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemLookUpEdit_AltKategori.ValueMember = "ID";
             // 
             // barButtonItem_YeniKodEkle
@@ -184,6 +186,27 @@
             this.barButtonItem_koduGuncelle.Id = 239;
             this.barButtonItem_koduGuncelle.Name = "barButtonItem_koduGuncelle";
             this.barButtonItem_koduGuncelle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_koduGuncelle_ItemClick);
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "Sait ORHAN (saitorhan@yandex.com)";
+            this.barStaticItem1.Id = 241;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barButtonItem_yazdir
+            // 
+            this.barButtonItem_yazdir.Caption = "Yazdır";
+            this.barButtonItem_yazdir.Id = 243;
+            this.barButtonItem_yazdir.Name = "barButtonItem_yazdir";
+            this.barButtonItem_yazdir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_yazdir_ItemClick);
+            // 
+            // barButtonItem_farkliKaydet
+            // 
+            this.barButtonItem_farkliKaydet.Caption = "Word Belgesi Olarak Kaydet";
+            this.barButtonItem_farkliKaydet.Id = 244;
+            this.barButtonItem_farkliKaydet.Name = "barButtonItem_farkliKaydet";
+            this.barButtonItem_farkliKaydet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_farkliKaydet_ItemClick);
             // 
             // ribbonPage_KayitliKodlar
             // 
@@ -257,6 +280,11 @@
             this.repositoryItemFloatingObjectOutlineWeight1.Control = null;
             this.repositoryItemFloatingObjectOutlineWeight1.Name = "repositoryItemFloatingObjectOutlineWeight1";
             // 
+            // repositoryItemHyperLinkEdit1
+            // 
+            this.repositoryItemHyperLinkEdit1.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
@@ -286,6 +314,7 @@
             this.listBoxControl_Kodlar.Location = new System.Drawing.Point(0, 0);
             this.listBoxControl_Kodlar.Name = "listBoxControl_Kodlar";
             this.listBoxControl_Kodlar.Size = new System.Drawing.Size(448, 517);
+            this.listBoxControl_Kodlar.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.listBoxControl_Kodlar.TabIndex = 0;
             this.listBoxControl_Kodlar.ValueMember = "ID";
             this.listBoxControl_Kodlar.SelectedValueChanged += new System.EventHandler(this.listBoxControl_Kodlar_SelectedValueChanged_1);
@@ -301,32 +330,6 @@
             this.richEditControl_Kod.ReadOnly = true;
             this.richEditControl_Kod.Size = new System.Drawing.Size(731, 517);
             this.richEditControl_Kod.TabIndex = 0;
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "Sait ORHAN (saitorhan@yandex.com)";
-            this.barStaticItem1.Id = 241;
-            this.barStaticItem1.Name = "barStaticItem1";
-            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // repositoryItemHyperLinkEdit1
-            // 
-            this.repositoryItemHyperLinkEdit1.AutoHeight = false;
-            this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
-            // 
-            // barButtonItem_yazdir
-            // 
-            this.barButtonItem_yazdir.Caption = "Yazdır";
-            this.barButtonItem_yazdir.Id = 243;
-            this.barButtonItem_yazdir.Name = "barButtonItem_yazdir";
-            this.barButtonItem_yazdir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_yazdir_ItemClick);
-            // 
-            // barButtonItem_farkliKaydet
-            // 
-            this.barButtonItem_farkliKaydet.Caption = "Word Belgesi Olarak Kaydet";
-            this.barButtonItem_farkliKaydet.Id = 244;
-            this.barButtonItem_farkliKaydet.Name = "barButtonItem_farkliKaydet";
-            this.barButtonItem_farkliKaydet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_farkliKaydet_ItemClick);
             // 
             // saveFileDialog1
             // 
@@ -354,10 +357,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBorderLineStyle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBorderLineWeight1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFloatingObjectOutlineWeight1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Kodlar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }

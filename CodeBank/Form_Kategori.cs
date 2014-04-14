@@ -233,5 +233,10 @@ namespace CodeBank
             Altkategori = ctx.AltKategoris.Where(k => k.ID == ID).Select(k => k).Single();
             textEdit_guncellenecekAlt.EditValue = Altkategori.Ad;
         }
+
+        private void textEdit_kategoriAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Char.ToUpper(e.KeyChar);
+        }
     }
 }

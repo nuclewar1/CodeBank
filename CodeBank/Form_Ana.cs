@@ -148,5 +148,60 @@ namespace CodeBank
             }
         }
 
+        private void barButtonItem_Ara_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (barEditItem_AranacakMetin.EditValue == null || barEditItem_AranacakMetin.EditValue.ToString().Trim().Length == 0)
+            {
+                return;
+            }
+
+            string aranacakMetin = barEditItem_AranacakMetin.EditValue.ToString().Trim();
+
+            int[] AramaSecenegiDeger = new int[4];
+            AramaSecenegiDeger[0] = Convert.ToInt32(barEditItem_KategoriAdindaAra.EditValue);
+            AramaSecenegiDeger[1] = Convert.ToInt32(barEditItem_AltKategoriAdindaAra.EditValue);
+            AramaSecenegiDeger[2] = Convert.ToInt32(barEditItem_KodBasligindaAra.EditValue);
+            AramaSecenegiDeger[3] = Convert.ToInt32(barEditItem_KodicindeAra.EditValue);
+            string aramaSecenegi = "_";
+            foreach (int item in AramaSecenegiDeger)
+            {
+                aramaSecenegi += item;
+            }
+
+            AramaIslemleri.AramaSecenekleri AramaSecenegi = (AramaIslemleri.AramaSecenekleri)Enum.Parse(typeof(AramaIslemleri.AramaSecenekleri), aramaSecenegi);
+
+            if (AramaSecenegi == AramaIslemleri.AramaSecenekleri._0000)
+            {
+                return;
+            }
+
+            int KayitSayisi = 0;
+            IEnumerable<Kodlar> kodlar = AramaIslemleri.Ara(aranacakMetin, AramaSecenegi, ctx, out KayitSayisi);
+            if (KayitSayisi > 0)
+            {
+                listBoxControl_Kodlar.DataSource = kodlar;
+            }
+            else
+            {
+                XtraMessageBox.Show(aranacakMetin + " içeren bir kayıt bulunamadı.", "Sonuç", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+        }
+
+        private void ribbonControl1_SelectedPageChanged(object sender, EventArgs e)
+        {
+            if (ribbonControl1.SelectedPage.Text == "Ara")
+            {
+                listBoxControl_Kodlar.DataSource = null;
+            }
+        }
+
+        private void listBoxControl_Kodlar_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (listBoxControl_Kodlar.DataSource==null)
+            {
+                richEditControl_Kod.Text = "";
+            }
+        }
+
     }
 }

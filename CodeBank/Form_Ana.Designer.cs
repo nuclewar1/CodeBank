@@ -43,16 +43,30 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barButtonItem_yazdir = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_farkliKaydet = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem_KategoriAdindaAra = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemCheckEdit_KategoriAdindaAra = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.barEditItem_AltKategoriAdindaAra = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemCheckEdit_AltKategoriAdindaAra = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.barEditItem_KodBasligindaAra = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemCheckEdit_KodBasligindaAra = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.barEditItem_KodicindeAra = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemCheckEdit_KodicindeAra = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.barEditItem_AranacakMetin = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barButtonItem_Ara = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage_KayitliKodlar = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup_Islemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage_Ara = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup_AramaSecenekleri = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemFontEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemFontEdit();
             this.repositoryItemRichEditFontSizeEdit1 = new DevExpress.XtraRichEdit.Design.RepositoryItemRichEditFontSizeEdit();
             this.repositoryItemBorderLineStyle1 = new DevExpress.XtraRichEdit.Forms.Design.RepositoryItemBorderLineStyle();
             this.repositoryItemBorderLineWeight1 = new DevExpress.XtraRichEdit.Forms.Design.RepositoryItemBorderLineWeight();
             this.repositoryItemFloatingObjectOutlineWeight1 = new DevExpress.XtraRichEdit.Forms.Design.RepositoryItemFloatingObjectOutlineWeight();
             this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.repositoryItemToggleSwitch1 = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.listBoxControl_Kodlar = new DevExpress.XtraEditors.ListBoxControl();
@@ -61,12 +75,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_Kategori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_AltKategori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_KategoriAdindaAra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_AltKategoriAdindaAra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_KodBasligindaAra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_KodicindeAra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBorderLineStyle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBorderLineWeight1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFloatingObjectOutlineWeight1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Kodlar)).BeginInit();
@@ -86,12 +106,19 @@
             this.barButtonItem_koduGuncelle,
             this.barStaticItem1,
             this.barButtonItem_yazdir,
-            this.barButtonItem_farkliKaydet});
+            this.barButtonItem_farkliKaydet,
+            this.barEditItem_KategoriAdindaAra,
+            this.barEditItem_AltKategoriAdindaAra,
+            this.barEditItem_KodBasligindaAra,
+            this.barEditItem_KodicindeAra,
+            this.barEditItem_AranacakMetin,
+            this.barButtonItem_Ara});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 246;
+            this.ribbonControl1.MaxItemId = 255;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage_KayitliKodlar});
+            this.ribbonPage_KayitliKodlar,
+            this.ribbonPage_Ara});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit_Kategori,
             this.repositoryItemLookUpEdit_AltKategori,
@@ -100,13 +127,19 @@
             this.repositoryItemBorderLineStyle1,
             this.repositoryItemBorderLineWeight1,
             this.repositoryItemFloatingObjectOutlineWeight1,
-            this.repositoryItemHyperLinkEdit1});
+            this.repositoryItemHyperLinkEdit1,
+            this.repositoryItemToggleSwitch1,
+            this.repositoryItemCheckEdit_KategoriAdindaAra,
+            this.repositoryItemCheckEdit_AltKategoriAdindaAra,
+            this.repositoryItemCheckEdit_KodBasligindaAra,
+            this.repositoryItemCheckEdit_KodicindeAra,
+            this.repositoryItemTextEdit1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.Size = new System.Drawing.Size(1184, 117);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
             // 
             // barEditItem_Kategori
             // 
@@ -208,6 +241,82 @@
             this.barButtonItem_farkliKaydet.Name = "barButtonItem_farkliKaydet";
             this.barButtonItem_farkliKaydet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_farkliKaydet_ItemClick);
             // 
+            // barEditItem_KategoriAdindaAra
+            // 
+            this.barEditItem_KategoriAdindaAra.Caption = "Kategori Adında Ara";
+            this.barEditItem_KategoriAdindaAra.Edit = this.repositoryItemCheckEdit_KategoriAdindaAra;
+            this.barEditItem_KategoriAdindaAra.EditValue = false;
+            this.barEditItem_KategoriAdindaAra.Id = 248;
+            this.barEditItem_KategoriAdindaAra.Name = "barEditItem_KategoriAdindaAra";
+            // 
+            // repositoryItemCheckEdit_KategoriAdindaAra
+            // 
+            this.repositoryItemCheckEdit_KategoriAdindaAra.AutoHeight = false;
+            this.repositoryItemCheckEdit_KategoriAdindaAra.Caption = "Check";
+            this.repositoryItemCheckEdit_KategoriAdindaAra.Name = "repositoryItemCheckEdit_KategoriAdindaAra";
+            // 
+            // barEditItem_AltKategoriAdindaAra
+            // 
+            this.barEditItem_AltKategoriAdindaAra.Caption = "Alt Kategori Adında Ara";
+            this.barEditItem_AltKategoriAdindaAra.Edit = this.repositoryItemCheckEdit_AltKategoriAdindaAra;
+            this.barEditItem_AltKategoriAdindaAra.EditValue = false;
+            this.barEditItem_AltKategoriAdindaAra.Id = 249;
+            this.barEditItem_AltKategoriAdindaAra.Name = "barEditItem_AltKategoriAdindaAra";
+            // 
+            // repositoryItemCheckEdit_AltKategoriAdindaAra
+            // 
+            this.repositoryItemCheckEdit_AltKategoriAdindaAra.AutoHeight = false;
+            this.repositoryItemCheckEdit_AltKategoriAdindaAra.Caption = "Check";
+            this.repositoryItemCheckEdit_AltKategoriAdindaAra.Name = "repositoryItemCheckEdit_AltKategoriAdindaAra";
+            // 
+            // barEditItem_KodBasligindaAra
+            // 
+            this.barEditItem_KodBasligindaAra.Caption = "Kod Başlığında Ara";
+            this.barEditItem_KodBasligindaAra.Edit = this.repositoryItemCheckEdit_KodBasligindaAra;
+            this.barEditItem_KodBasligindaAra.EditValue = false;
+            this.barEditItem_KodBasligindaAra.Id = 250;
+            this.barEditItem_KodBasligindaAra.Name = "barEditItem_KodBasligindaAra";
+            // 
+            // repositoryItemCheckEdit_KodBasligindaAra
+            // 
+            this.repositoryItemCheckEdit_KodBasligindaAra.AutoHeight = false;
+            this.repositoryItemCheckEdit_KodBasligindaAra.Caption = "Check";
+            this.repositoryItemCheckEdit_KodBasligindaAra.Name = "repositoryItemCheckEdit_KodBasligindaAra";
+            // 
+            // barEditItem_KodicindeAra
+            // 
+            this.barEditItem_KodicindeAra.Caption = "Kod İçinde Ara";
+            this.barEditItem_KodicindeAra.Edit = this.repositoryItemCheckEdit_KodicindeAra;
+            this.barEditItem_KodicindeAra.EditValue = true;
+            this.barEditItem_KodicindeAra.Id = 251;
+            this.barEditItem_KodicindeAra.Name = "barEditItem_KodicindeAra";
+            // 
+            // repositoryItemCheckEdit_KodicindeAra
+            // 
+            this.repositoryItemCheckEdit_KodicindeAra.AutoHeight = false;
+            this.repositoryItemCheckEdit_KodicindeAra.Caption = "Check";
+            this.repositoryItemCheckEdit_KodicindeAra.Name = "repositoryItemCheckEdit_KodicindeAra";
+            // 
+            // barEditItem_AranacakMetin
+            // 
+            this.barEditItem_AranacakMetin.Caption = "Aranacak Metin";
+            this.barEditItem_AranacakMetin.Edit = this.repositoryItemTextEdit1;
+            this.barEditItem_AranacakMetin.Id = 252;
+            this.barEditItem_AranacakMetin.Name = "barEditItem_AranacakMetin";
+            this.barEditItem_AranacakMetin.Width = 150;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // barButtonItem_Ara
+            // 
+            this.barButtonItem_Ara.Caption = "Aramaya Başla";
+            this.barButtonItem_Ara.Id = 254;
+            this.barButtonItem_Ara.Name = "barButtonItem_Ara";
+            this.barButtonItem_Ara.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Ara_ItemClick);
+            // 
             // ribbonPage_KayitliKodlar
             // 
             this.ribbonPage_KayitliKodlar.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -215,7 +324,7 @@
             this.ribbonPageGroup_Islemler,
             this.ribbonPageGroup2});
             this.ribbonPage_KayitliKodlar.Name = "ribbonPage_KayitliKodlar";
-            this.ribbonPage_KayitliKodlar.Text = "Kayıtlı Kodlar";
+            this.ribbonPage_KayitliKodlar.Text = "Ana Menü";
             // 
             // ribbonPageGroup1
             // 
@@ -240,6 +349,24 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem_farkliKaydet);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Gösterilen Kod İşlemleri";
+            // 
+            // ribbonPage_Ara
+            // 
+            this.ribbonPage_Ara.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup_AramaSecenekleri});
+            this.ribbonPage_Ara.Name = "ribbonPage_Ara";
+            this.ribbonPage_Ara.Text = "Ara";
+            // 
+            // ribbonPageGroup_AramaSecenekleri
+            // 
+            this.ribbonPageGroup_AramaSecenekleri.ItemLinks.Add(this.barEditItem_AranacakMetin);
+            this.ribbonPageGroup_AramaSecenekleri.ItemLinks.Add(this.barEditItem_KategoriAdindaAra);
+            this.ribbonPageGroup_AramaSecenekleri.ItemLinks.Add(this.barEditItem_AltKategoriAdindaAra);
+            this.ribbonPageGroup_AramaSecenekleri.ItemLinks.Add(this.barEditItem_KodBasligindaAra);
+            this.ribbonPageGroup_AramaSecenekleri.ItemLinks.Add(this.barEditItem_KodicindeAra);
+            this.ribbonPageGroup_AramaSecenekleri.ItemLinks.Add(this.barButtonItem_Ara);
+            this.ribbonPageGroup_AramaSecenekleri.Name = "ribbonPageGroup_AramaSecenekleri";
+            this.ribbonPageGroup_AramaSecenekleri.Text = "Arama Seçenekleri";
             // 
             // repositoryItemFontEdit1
             // 
@@ -285,6 +412,13 @@
             this.repositoryItemHyperLinkEdit1.AutoHeight = false;
             this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
             // 
+            // repositoryItemToggleSwitch1
+            // 
+            this.repositoryItemToggleSwitch1.AutoHeight = false;
+            this.repositoryItemToggleSwitch1.Name = "repositoryItemToggleSwitch1";
+            this.repositoryItemToggleSwitch1.OffText = "Off";
+            this.repositoryItemToggleSwitch1.OnText = "On";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
@@ -317,6 +451,7 @@
             this.listBoxControl_Kodlar.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.listBoxControl_Kodlar.TabIndex = 0;
             this.listBoxControl_Kodlar.ValueMember = "ID";
+            this.listBoxControl_Kodlar.DataSourceChanged += new System.EventHandler(this.listBoxControl_Kodlar_DataSourceChanged);
             this.listBoxControl_Kodlar.SelectedValueChanged += new System.EventHandler(this.listBoxControl_Kodlar_SelectedValueChanged_1);
             // 
             // richEditControl_Kod
@@ -352,12 +487,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_Kategori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_AltKategori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_KategoriAdindaAra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_AltKategoriAdindaAra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_KodBasligindaAra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_KodicindeAra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBorderLineStyle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBorderLineWeight1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFloatingObjectOutlineWeight1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Kodlar)).EndInit();
@@ -395,6 +536,20 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem_yazdir;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_farkliKaydet;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage_Ara;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup_AramaSecenekleri;
+        private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch1;
+        private DevExpress.XtraBars.BarEditItem barEditItem_KategoriAdindaAra;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit_KategoriAdindaAra;
+        private DevExpress.XtraBars.BarEditItem barEditItem_AltKategoriAdindaAra;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit_AltKategoriAdindaAra;
+        private DevExpress.XtraBars.BarEditItem barEditItem_KodBasligindaAra;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit_KodBasligindaAra;
+        private DevExpress.XtraBars.BarEditItem barEditItem_KodicindeAra;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit_KodicindeAra;
+        private DevExpress.XtraBars.BarEditItem barEditItem_AranacakMetin;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem_Ara;
     }
 }
 

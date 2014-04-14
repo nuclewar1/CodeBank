@@ -160,10 +160,10 @@
             // 
             this.textEdit_guncellenecek.Location = new System.Drawing.Point(5, 72);
             this.textEdit_guncellenecek.Name = "textEdit_guncellenecek";
-            this.textEdit_guncellenecek.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textEdit_guncellenecek.Properties.MaxLength = 30;
             this.textEdit_guncellenecek.Size = new System.Drawing.Size(190, 20);
             this.textEdit_guncellenecek.TabIndex = 0;
+            this.textEdit_guncellenecek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit_kategoriAdi_KeyPress);
             // 
             // groupControl1
             // 
@@ -198,10 +198,10 @@
             // 
             this.textEdit_kategoriAdi.Location = new System.Drawing.Point(5, 56);
             this.textEdit_kategoriAdi.Name = "textEdit_kategoriAdi";
-            this.textEdit_kategoriAdi.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textEdit_kategoriAdi.Properties.MaxLength = 30;
             this.textEdit_kategoriAdi.Size = new System.Drawing.Size(190, 20);
             this.textEdit_kategoriAdi.TabIndex = 0;
+            this.textEdit_kategoriAdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit_kategoriAdi_KeyPress);
             // 
             // groupControl5
             // 
@@ -278,10 +278,10 @@
             // 
             this.textEdit_guncellenecekAlt.Location = new System.Drawing.Point(5, 98);
             this.textEdit_guncellenecekAlt.Name = "textEdit_guncellenecekAlt";
-            this.textEdit_guncellenecekAlt.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textEdit_guncellenecekAlt.Properties.MaxLength = 30;
             this.textEdit_guncellenecekAlt.Size = new System.Drawing.Size(190, 20);
             this.textEdit_guncellenecekAlt.TabIndex = 0;
+            this.textEdit_guncellenecekAlt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit_kategoriAdi_KeyPress);
             // 
             // groupControl3
             // 
@@ -340,10 +340,10 @@
             // 
             this.textEdit_AltKategoriAdi.Location = new System.Drawing.Point(5, 72);
             this.textEdit_AltKategoriAdi.Name = "textEdit_AltKategoriAdi";
-            this.textEdit_AltKategoriAdi.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textEdit_AltKategoriAdi.Properties.MaxLength = 30;
             this.textEdit_AltKategoriAdi.Size = new System.Drawing.Size(190, 20);
             this.textEdit_AltKategoriAdi.TabIndex = 0;
+            this.textEdit_AltKategoriAdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit_kategoriAdi_KeyPress);
             // 
             // Form_Kategori
             // 

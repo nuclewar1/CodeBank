@@ -8,6 +8,7 @@ using Devart.Data.SQLite;
 using Devart.Data.SQLite.Linq;
 using MainContext;
 using System.IO;
+using System.Diagnostics;
 
 namespace UpgradeScript
 {
@@ -100,6 +101,9 @@ CREATE UNIQUE INDEX [ozellik] ON [Ozellikler] ([Ozellik]);";
                     File.Copy("cdb.db", "db.db");
                 }
             }
+
+            Process.Start("http:\\saitorhan.wordpress.com");
+
         }
     }
 }

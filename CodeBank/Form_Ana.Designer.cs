@@ -56,6 +56,8 @@
             this.barButtonItem_Ara = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_yedekle = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_yedegiYukle = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem_sonYedeklemeZamani = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage_KayitliKodlar = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup_Islemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -71,14 +73,14 @@
             this.repositoryItemFloatingObjectOutlineWeight1 = new DevExpress.XtraRichEdit.Forms.Design.RepositoryItemFloatingObjectOutlineWeight();
             this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repositoryItemToggleSwitch1 = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.listBoxControl_Kodlar = new DevExpress.XtraEditors.ListBoxControl();
             this.richEditControl_Kod = new DevExpress.XtraRichEdit.RichEditControl();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.barStaticItem_sonYedeklemeZamani = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.barEditItem_site = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemHyperLinkEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_Kategori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_AltKategori)).BeginInit();
@@ -94,10 +96,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFloatingObjectOutlineWeight1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Kodlar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -124,10 +127,11 @@
             this.barButtonItem_yedekle,
             this.barButtonItem_yedegiYukle,
             this.barStaticItem_sonYedeklemeZamani,
-            this.barStaticItem2});
+            this.barStaticItem2,
+            this.barEditItem_site});
             this.ribbonControl1.ItemsVertAlign = DevExpress.Utils.VertAlignment.Top;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 263;
+            this.ribbonControl1.MaxItemId = 265;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage_KayitliKodlar,
@@ -148,7 +152,8 @@
             this.repositoryItemCheckEdit_KodBasligindaAra,
             this.repositoryItemCheckEdit_KodicindeAra,
             this.repositoryItemTextEdit1,
-            this.repositoryItemComboBox1});
+            this.repositoryItemComboBox1,
+            this.repositoryItemHyperLinkEdit2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControl1.Size = new System.Drawing.Size(1184, 117);
@@ -346,6 +351,19 @@
             this.barButtonItem_yedegiYukle.Name = "barButtonItem_yedegiYukle";
             this.barButtonItem_yedegiYukle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_yedegiYukle_ItemClick);
             // 
+            // barStaticItem_sonYedeklemeZamani
+            // 
+            this.barStaticItem_sonYedeklemeZamani.Id = 260;
+            this.barStaticItem_sonYedeklemeZamani.Name = "barStaticItem_sonYedeklemeZamani";
+            this.barStaticItem_sonYedeklemeZamani.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "Son Yedekleme Zamanı";
+            this.barStaticItem2.Id = 261;
+            this.barStaticItem2.Name = "barStaticItem2";
+            this.barStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
             // ribbonPage_KayitliKodlar
             // 
             this.ribbonPage_KayitliKodlar.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -464,9 +482,17 @@
             this.repositoryItemToggleSwitch1.OffText = "Off";
             this.repositoryItemToggleSwitch1.OnText = "On";
             // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barEditItem_site);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 634);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
@@ -511,25 +537,20 @@
             this.richEditControl_Kod.Size = new System.Drawing.Size(731, 517);
             this.richEditControl_Kod.TabIndex = 0;
             // 
-            // barStaticItem_sonYedeklemeZamani
+            // barEditItem_site
             // 
-            this.barStaticItem_sonYedeklemeZamani.Id = 260;
-            this.barStaticItem_sonYedeklemeZamani.Name = "barStaticItem_sonYedeklemeZamani";
-            this.barStaticItem_sonYedeklemeZamani.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.barEditItem_site.Caption = "Web";
+            this.barEditItem_site.Edit = this.repositoryItemHyperLinkEdit2;
+            this.barEditItem_site.EditValue = "http:\\\\saitorhan.wordpress.com";
+            this.barEditItem_site.Id = 264;
+            this.barEditItem_site.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Immediate;
+            this.barEditItem_site.Name = "barEditItem_site";
+            this.barEditItem_site.Width = 170;
             // 
-            // barStaticItem2
+            // repositoryItemHyperLinkEdit2
             // 
-            this.barStaticItem2.Caption = "Son Yedekleme Zamanı";
-            this.barStaticItem2.Id = 261;
-            this.barStaticItem2.Name = "barStaticItem2";
-            this.barStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            this.repositoryItemHyperLinkEdit2.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit2.Name = "repositoryItemHyperLinkEdit2";
             // 
             // Form_Ana
             // 
@@ -560,10 +581,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFloatingObjectOutlineWeight1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Kodlar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,6 +641,8 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem_sonYedeklemeZamani;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraBars.BarEditItem barEditItem_site;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit2;
     }
 }
 

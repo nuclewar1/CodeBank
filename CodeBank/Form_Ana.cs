@@ -49,7 +49,7 @@ namespace CodeBank
                 else
                 {
                     VeriTabaniniInternettenIndir();
-                    
+
                 }
             }
         }
@@ -298,12 +298,23 @@ namespace CodeBank
             //Gelistir Yedekten yüklemeden sonra veri kaybını önle
 
             OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Code Bank Dosyaları|*.sfr";
             if (DialogResult.OK == open.ShowDialog())
             {
                 SQLiteConnectionStringBuilder str = new SQLiteConnectionStringBuilder();
                 str.DataSource = open.FileName;
+                string yedeklemeTarihi = "";
                 MainDataContext ctx2 = new MainDataContext(str.ToString());
-                string yedeklemeTarihi = ctx.Ozelliklers.Where(o => o.ID == 1).Select(o => o.Deger).Single();
+                try
+                {
+                    yedeklemeTarihi = ctx2.Ozelliklers.Where(o => o.ID == 1).Select(o => o.Deger).Single();
+                }
+                catch (Exception)
+                {
+                    XtraMessageBox.Show(open.FileName + "\ndosyası doğrulanamadı. Lütfen başka yedek dosyasını deneyiniz.", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 StringBuilder builder = new StringBuilder();
                 builder.AppendFormat("Seçtiğiniz yedekleme dosyası {0} tarihinde alınmıştır.\nDevam etmeniz durumunda veritanınız bu yedek dosyası ile eşitlenecektir.\nBu tarihten sonraki kodlarınız silinecektir. Devam etmek istiyor musunuz?", yedeklemeTarihi);
 
@@ -329,6 +340,7 @@ namespace CodeBank
                 }
             }
         }
+
 
     }
 }

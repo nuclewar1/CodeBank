@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="main" EntityNamespace="MainContext" ContextNamespace="MainContext" Class="MainDataContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="51a8518f-e34f-45e2-8912-254bbf7d9018" Provider="Devart.Data.SQLite.Linq.Provider.SQLiteDataProvider, Devart.Data.SQLite.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=&quot;D:\SAFER YAZILIM\Software Projects\CodeBank\CodeBank\bin\Debug\cdb.db&quot;" Provider="Devart.Data.SQLite" />
+  <Table Name="&quot;main&quot;.Ozellikler" Member="Ozelliklers">
+    <Type Name="Ozellikler" ed:Guid="596977f3-0e63-46a9-9097-652296c80eb3">
+      <Column Name="ID" Type="System.Int32" DbType="INTEGER NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="True" ed:Guid="07e21ac6-bb1a-4795-b688-8462fa6a6d2c" />
+      <Column Name="Ozellik" Type="System.String" DbType="NVARCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="True" ed:Guid="a421acd9-21e2-4ecd-a84d-75a9d8f3f009" />
+      <Column Name="Deger" Type="System.String" DbType="NVARCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="True" ed:Guid="f77a96d3-b617-4ec8-a53e-4e787878165e" />
+    </Type>
+  </Table>
+</Database>

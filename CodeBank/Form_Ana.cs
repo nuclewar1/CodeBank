@@ -268,6 +268,7 @@ namespace CodeBank
                     XtraMessageBox.Show("Yedekten geri yükleme işlemi başarı ile gerçekleşmiştir.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ozellik = ctx.Ozelliklers.Where(o => o.ID == 1).Select(o => o).Single();
                     barStaticItem_sonYedeklemeZamani.Caption = ozellik.Deger;
+                    KategorileriCek();
                 }
             }
         }

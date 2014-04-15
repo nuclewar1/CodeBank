@@ -16,8 +16,6 @@ namespace UpgradeScript
         static void Main(string[] args)
         {
             OzelliklerTablosu();
-            Console.WriteLine("tamam");
-            Console.ReadLine();
         }
 
         private static void OzelliklerTablosu()
@@ -42,7 +40,8 @@ namespace UpgradeScript
                     command.CommandText = @"CREATE TABLE [Ozellikler] (
   [ID] INTEGER NOT NULL ON CONFLICT FAIL PRIMARY KEY ON CONFLICT FAIL AUTOINCREMENT, 
   [Ozellik] NVARCHAR(100) NOT NULL ON CONFLICT FAIL, 
-  [Deger] NVARCHAR(100) NOT NULL ON CONFLICT FAIL);
+  [Deger] NVARCHAR(100) NOT NULL ON CONFLICT FAIL, 
+  [SonIslemTarihi] DATETIME);
 CREATE UNIQUE INDEX [ozellik] ON [Ozellikler] ([Ozellik]);";
                     command.ExecuteNonQuery();
                 }
@@ -92,6 +91,14 @@ CREATE UNIQUE INDEX [ozellik] ON [Ozellikler] ([Ozellik]);";
                 #endregion Ana tablodan silinen özellikleri sil
 
 
+            }
+
+            else
+            {
+                if (File.Exists("cdb.db"))
+                {
+                    File.Copy("cdb.db", "db.db");
+                }
             }
         }
     }

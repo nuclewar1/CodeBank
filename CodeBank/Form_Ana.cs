@@ -15,6 +15,7 @@ using DevExpress.XtraRichEdit;
 using System.IO;
 using DevExpress.XtraSplashScreen;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Net;
 
 namespace CodeBank
 {
@@ -41,8 +42,61 @@ namespace CodeBank
         {
             if (!File.Exists("db.db"))
             {
-                MessageBox.Show("Test");
-                File.Copy("cdb.db", "db.db");
+                if (File.Exists("cdb.db"))
+                {
+                    File.Copy("cdb.db", "db.db");
+                }
+                else
+                {
+                    VeriTabaniniInternettenIndir();
+                    
+                }
+            }
+        }
+
+        private void VeriTabaniniInternettenIndir()
+        {
+            DialogResult sonuc = XtraMessageBox.Show("Veritabanı bulunamadı. Onarılması için internet bağlantısına ihtiyaç duyulmaktadır.\nOnarmak için bu mesajı oanylayınız? (Download miktarı 11KB)", "Hata!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sonuc == DialogResult.Yes)
+            {
+                bool tryagain = true;
+                do
+                {
+                    try
+                    {
+                        SplashScreenManager.ShowForm(typeof(WaitFormYukleniyor));
+
+                        WebClient web = new WebClient();
+                        string kaynak = @"https://doc-08-ac-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/mq2r7al91j2n60r75vmia2tadp1vh43q/1397570400000/13902253761435311488/*/0B2EAA8C7rXnhb0JrbUVmSzB4cDA?h=16653014193614665626&e=download";
+                        web.DownloadFile(kaynak, "cdb.db");
+                        if (File.Exists("cdb.db"))
+                        {
+                            File.SetAttributes("cdb.db", FileAttributes.Hidden);
+                        }
+
+                        tryagain = false;
+                        XtraMessageBox.Show("Veritabı başarı ile onarıldı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        VeriTabaniKontroluYap();
+                    }
+                    catch (Exception ex)
+                    {
+                        sonuc = XtraMessageBox.Show(ex.Message + '\n' + "Tekrar denensin mi?", "Hata!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        SplashScreenManager.CloseForm();
+                    }
+                } while (sonuc == DialogResult.Yes && tryagain);
+
+                if (sonuc == DialogResult.No)
+                {
+                    Application.Exit();
+                }
+
+            }
+            else
+            {
+                Application.Exit();
             }
         }
 
@@ -197,7 +251,7 @@ namespace CodeBank
             {
                 listBoxControl_Kodlar.DataSource = null;
             }
-            else if (ribbonControl1.SelectedPage.Name=="ribbonPage_Yonetim")
+            else if (ribbonControl1.SelectedPage.Name == "ribbonPage_Yonetim")
             {
                 Ozellikler ozellik = ctx.Ozelliklers.Where(o => o.Ozellik == "SonYedekleme").Select(o => o).Single();
                 barStaticItem_sonYedeklemeZamani.Caption = ozellik.Deger;
@@ -225,6 +279,7 @@ namespace CodeBank
                 DateTime simdi = DateTime.Now;
                 Ozellikler ozellik = ozellik = ctx.Ozelliklers.Where(o => o.Ozellik == "SonYedekleme").Select(o => o).Single();
                 ozellik.Deger = simdi.ToString("dd MMMM yyyy HH:mm:ss");
+                ozellik.SonIslemTarihi = simdi;
                 ctx.SubmitChanges();
                 File.Copy("db.db", save.FileName, true);
 
@@ -243,24 +298,26 @@ namespace CodeBank
             //Gelistir Yedekten yüklemeden sonra veri kaybını önle
 
             OpenFileDialog open = new OpenFileDialog();
-            if (DialogResult.OK==open.ShowDialog())
+            if (DialogResult.OK == open.ShowDialog())
             {
-                SQLiteConnectionStringBuilder str= new SQLiteConnectionStringBuilder();
-                str.DataSource=open.FileName;
+                SQLiteConnectionStringBuilder str = new SQLiteConnectionStringBuilder();
+                str.DataSource = open.FileName;
                 MainDataContext ctx2 = new MainDataContext(str.ToString());
                 string yedeklemeTarihi = ctx.Ozelliklers.Where(o => o.ID == 1).Select(o => o.Deger).Single();
                 StringBuilder builder = new StringBuilder();
                 builder.AppendFormat("Seçtiğiniz yedekleme dosyası {0} tarihinde alınmıştır.\nDevam etmeniz durumunda veritanınız bu yedek dosyası ile eşitlenecektir.\nBu tarihten sonraki kodlarınız silinecektir. Devam etmek istiyor musunuz?", yedeklemeTarihi);
 
                 DialogResult result = XtraMessageBox.Show(builder.ToString(), "Uyarı!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result==DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     SplashScreenManager.ShowForm(typeof(WaitFormYukleniyor));
 
                     File.Copy(open.FileName, "db.db", true);
 
+                    DateTime simdi = DateTime.Now;
                     Ozellikler ozellik = ctx.Ozelliklers.Where(o => o.ID == 2).Select(o => o).Single();
-                    ozellik.Deger = DateTime.Now.ToString("dd MMMM yyyy HH:mm:ss");
+                    ozellik.Deger = simdi.ToString("dd MMMM yyyy HH:mm:ss");
+                    ozellik.SonIslemTarihi = simdi;
                     ctx.SubmitChanges();
 
                     SplashScreenManager.CloseForm();

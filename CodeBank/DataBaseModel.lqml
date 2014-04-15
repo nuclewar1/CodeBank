@@ -34,6 +34,7 @@
       <Column Name="ID" Type="System.Int32" DbType="INTEGER NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="True" ed:Guid="37897218-2d5c-4572-b11a-60fbe509aeed" />
       <Column Name="Ozellik" Type="System.String" DbType="NVARCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="True" ed:Guid="200d3354-8ed8-4ae2-a637-96b061ff2687" />
       <Column Name="Deger" Type="System.String" DbType="NVARCHAR NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="True" ed:Guid="f9b9f6a9-463a-47ec-bb60-bf7915f62554" />
+      <Column Name="SonIslemTarihi" Type="System.DateTime" DbType="DATETIME" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="False" ed:Guid="aea3d424-8b35-4521-b8a8-38d8dec9ff93" />
     </Type>
   </Table>
 </Database>

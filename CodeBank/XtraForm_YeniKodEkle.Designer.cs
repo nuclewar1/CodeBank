@@ -134,9 +134,9 @@
             // repositoryItemTextEdit_Baslik
             // 
             this.repositoryItemTextEdit_Baslik.AutoHeight = false;
-            this.repositoryItemTextEdit_Baslik.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.repositoryItemTextEdit_Baslik.MaxLength = 200;
             this.repositoryItemTextEdit_Baslik.Name = "repositoryItemTextEdit_Baslik";
+            this.repositoryItemTextEdit_Baslik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repositoryItemTextEdit_Baslik_KeyPress);
             // 
             // barStaticItem_kalanHarf
             // 

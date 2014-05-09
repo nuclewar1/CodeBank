@@ -74,6 +74,7 @@ namespace CodeBank
             textEdit_guncellenecek.EditValue = null;
             kategori = null;
             KategorileriGetir();
+            this.Close();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -107,6 +108,7 @@ namespace CodeBank
             textEdit_kategoriAdi.EditValue = null;
             kategori = null;
             KategorileriGetir();
+            this.Close();
         }
 
         private void simpleButton_sil_Click(object sender, EventArgs e)
@@ -133,6 +135,7 @@ namespace CodeBank
                 textEdit_guncellenecek.EditValue = null;
                 kategori = null;
             }
+            this.Close();
         }
 
         private void simpleButton_AltKategoriEkle_Click(object sender, EventArgs e)
@@ -166,6 +169,7 @@ namespace CodeBank
             {
                 XtraMessageBox.Show(ex.Message, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+            this.Close();
         }
 
         private void lookUpEdit_GuncellenecekAltUstu_EditValueChanged(object sender, EventArgs e)
@@ -205,6 +209,7 @@ namespace CodeBank
             {
                 XtraMessageBox.Show(ex.Message, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+            this.Close();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -227,6 +232,7 @@ namespace CodeBank
                 lookUpEdit_GuncellenecekAlt.Properties.DataSource = ctx.AltKategoris.Select(k => k);
                 textEdit_guncellenecekAlt.EditValue = null;
             }
+            this.Close();
         }
 
         private void lookUpEdit_GuncellenecekAlt_EditValueChanged(object sender, EventArgs e)

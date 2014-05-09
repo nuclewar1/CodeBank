@@ -145,6 +145,7 @@ namespace CodeBank
             XtraForm_YeniKodEkle ekle = new XtraForm_YeniKodEkle();
             ekle.ShowDialog();
             barEditItem_Kategori.EditValue = null;
+            barEditItem_AltKategori.EditValue = null;
             KategorileriCek();
         }
 
@@ -206,7 +207,6 @@ namespace CodeBank
 
         private void barButtonItem_Ara_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //Yeni Arama fonksiyonu
 
             if (barEditItem_AranacakMetin.EditValue == null || barEditItem_AranacakMetin.EditValue.ToString().Trim().Length == 0)
             {
@@ -269,7 +269,6 @@ namespace CodeBank
 
         private void barButtonItem_yedekle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //Yeni Yedek al
             SaveFileDialog save = new SaveFileDialog();
             save.Filter = "Code Bank Files|*.sfr";
             if (DialogResult.OK == save.ShowDialog())
@@ -294,7 +293,6 @@ namespace CodeBank
 
         private void barButtonItem_yedegiYukle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //Yeni Yedekten yükleme
             //Gelistir Yedekten yüklemeden sonra veri kaybını önle
 
             OpenFileDialog open = new OpenFileDialog();

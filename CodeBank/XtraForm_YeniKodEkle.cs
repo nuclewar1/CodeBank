@@ -124,5 +124,10 @@ namespace CodeBank
             KategorileriCek();
         }
 
+        private void repositoryItemTextEdit_Baslik_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Char.ToUpper(e.KeyChar);
+        }
+
     }
 }
